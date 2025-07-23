@@ -5,9 +5,6 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 
-
-
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",       // Path to your .feature files
@@ -16,6 +13,6 @@ import org.junit.runner.RunWith;
         monochrome = true,
         tags = "@smoke"// Better console outpu// Filter by tag if needed
 )
-public class CucumberTest {
 
+public class CucumberTest {
 }
