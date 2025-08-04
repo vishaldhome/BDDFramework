@@ -5,6 +5,9 @@ import Reusable.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 public class Hooks extends Base {
 
@@ -16,6 +19,8 @@ public class Hooks extends Base {
         testContext=context;
     }
 
+
+
     @Before
     public void beforeSetup(Scenario scenario){
         testContext.scenario=scenario;
@@ -23,9 +28,8 @@ public class Hooks extends Base {
 
     @After
     public void tearDown(Scenario scenario){
-
         if(scenario.isFailed()){
-            //ss
+            attachScreenshot(testContext.getWebdriver(), scenario);
         }
 System.out.println("Driver Quite....");
         testContext.getWebdriver().quit();

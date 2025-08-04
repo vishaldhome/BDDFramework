@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",       // Path to your .feature files
         glue = "stepDefinition",                       // Package containing step definitions
-        plugin = {"pretty", "html:target/cucumber-reports.html"}, // Reporting plugins
+        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json"}, // Reporting plugins
         monochrome = true,
         tags = "@smoke"// Better console outpu// Filter by tag if needed
 )

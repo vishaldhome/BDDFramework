@@ -6,6 +6,7 @@ import Reusable.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.WebDriver;
 
 public class LoginStepDef extends Base {
@@ -16,6 +17,7 @@ public class LoginStepDef extends Base {
     public LoginStepDef (TestContext context){
         driver=context.getWebdriver();
         loginpage = new LoginPage(driver);
+
     }
 
     @Given("User is on login page")
@@ -38,11 +40,15 @@ public class LoginStepDef extends Base {
     public void userShouldRedirectToPostloginDashboard() {
         String msg =driver.getTitle();
         System.out.println(msg);
+
     }
 
     @And("User clicked on login button")
     public void userClickedOnLoginButton() throws InterruptedException {
         loginpage.loginBtn.click();
+        SoftAssert s = new SoftAssert();
+        s.assertEquals("Yes","No");
+        s.assertAll();
         Thread.sleep(3000);
 
     }
