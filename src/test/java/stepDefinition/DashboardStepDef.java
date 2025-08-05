@@ -36,6 +36,7 @@ public class DashboardStepDef extends Base {
         String txt = usp.searchtxt.getText().trim();
         s.assertEquals(txt, "Search");
         System.out.println("Before assert");
+        System.out.println("New Line added");
       //  Assert.assertEquals(1,4);
     }
 
