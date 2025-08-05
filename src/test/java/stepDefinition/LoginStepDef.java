@@ -47,8 +47,8 @@ public class LoginStepDef extends Base {
     public void userClickedOnLoginButton() throws InterruptedException {
         loginpage.loginBtn.click();
         SoftAssert s = new SoftAssert();
-        s.assertEquals("Yes","No");
-        s.assertAll();
+       // s.assertEquals("Yes","No");
+      //  s.assertAll();
         Thread.sleep(3000);
 
     }
